@@ -1,0 +1,6 @@
+*.js
+.idea/
+node_modules/
+*.map
+*.d.ts
+*.css

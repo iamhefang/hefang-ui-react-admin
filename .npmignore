@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+node_modules/
+.npmignore
+*.tsx
+example.*
+hefang-ui-react-admin.iml
+*.scss
+tsconfig.json
+webpack.config.ts
+webpack.config.d.ts
+*.map
+*.tgz
+*.html
+src/

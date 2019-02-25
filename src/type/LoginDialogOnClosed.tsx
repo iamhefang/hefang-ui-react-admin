@@ -1,0 +1,1 @@
+export type LoginDialogOnClosed = (data?: string) => void;

@@ -1,0 +1,55 @@
+@import "vars";
+@import "../../node_modules/hefang-ui-css/libs/prefixes";
+
+.locker {
+  @include animation(fade-in .5s ease-in);
+  z-index: 999999999;
+  &-block {
+    width: 90%;
+    max-width: 30rem;
+    margin: 0 auto {
+      top: 18rem;
+    }
+    text-align: center;
+  }
+  &-input-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 2rem;
+    @include transition(opacity .35s ease);
+    @include opacity(.6);
+    &:hover {
+      @include opacity(1);
+    }
+    input, button {
+      background: none;
+      border: none;
+      background: white;
+      box-sizing: border-box;
+    }
+    input {
+      text-align: inherit;
+      width: 100%;
+      display: block;
+      font-size: 1rem;
+      padding: 1rem {
+        right: $locker-unlock-btn-width + 1rem;
+      }
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: $locker-unlock-btn-width;
+      border-left: 1px solid $border-color;
+      @include transition(all .35s ease);
+      &:hover {
+        background: gray;
+        color: white;
+      }
+    }
+  }
+}

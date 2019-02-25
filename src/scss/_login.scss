@@ -1,0 +1,52 @@
+.login {
+  &-container {
+    padding-top: 4rem;
+    header, footer {
+      position: fixed;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.65);
+      z-index: 10;
+      box-sizing: border-box;
+    }
+    header {
+      top: 0;
+      border-bottom: 1px solid #c5c5c5;
+      text-align: center;
+    }
+    footer {
+      bottom: 0;
+      border-top: 1px solid #c5c5c5;
+    }
+  }
+  &-type-dialog {
+    header, footer {
+      display: none;
+    }
+    .login-container {
+      padding: 0;
+    }
+  }
+  &-box {
+    max-width: 26rem;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.65);
+    label {
+      padding-top: .6rem;
+      padding-bottom: .3rem;
+    }
+    button {
+      padding: .6rem;
+      margin-top: .6rem;
+    }
+  }
+}
+
+.form-group {
+  padding: .5rem 0;
+  line-height: 1.5;
+}

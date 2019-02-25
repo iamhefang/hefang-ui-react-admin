@@ -1,0 +1,18 @@
+@import "vars";
+
+.path {
+  background: #fafafa;
+  padding: 0 .5rem;
+  li {
+    & + li {
+      &:before {
+        content: '/';
+        padding: 0 .4rem;
+        color: #b6b6b6;
+        font-size: .9rem;
+      }
+    }
+    display: inline-block;
+    line-height: $path-height;
+  }
+}

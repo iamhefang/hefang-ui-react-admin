@@ -1,0 +1,53 @@
+@import "vars";
+@import "../../node_modules/hefang-ui-css/libs/prefixes";
+
+.navbar, .path, .content, .side {
+  position: fixed;
+}
+
+.navbar, .side, .btn-toggle-menu {
+  left: 0;
+}
+
+.navbar {
+  top: 0;
+  width: 100%;
+  height: $navbar-height;
+}
+
+.path, .content {
+  left: $side-width;
+  right: 0;
+  @include transition(left .35s ease)
+}
+
+.path {
+  top: $navbar-height + 1rem;
+  height: $path-height;
+}
+
+.side {
+  left: 0;
+  border-right: 1px solid $border-color;
+  width: $side-width;
+  top: $navbar-height + 1rem;
+  bottom: 0;
+  @include transition(width .35s ease)
+}
+
+.btn-toggle-menu {
+  position: absolute;
+  border: none {
+    top: 1px solid $border-color
+  }
+  bottom: 0;
+  width: 100%;
+  height: $toggle-menu-btn-height;
+  line-height: $toggle-menu-btn-height;
+  text-align: center;
+}
+
+.content {
+  bottom: 0;
+  top: $navbar-height + $path-height + 1rem;
+}

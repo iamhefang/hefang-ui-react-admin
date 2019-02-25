@@ -1,0 +1,116 @@
+@import "vars";
+@import "../../node_modules/hefang-ui-css/libs/prefixes";
+
+.side {
+  background-color: #fafafa;
+  z-index: 2;
+  color: #707070;
+  &-label {
+    @include transition(transform .35s ease);
+  }
+  &-item {
+    position: relative;
+    color: inherit;
+    cursor: pointer;
+    border-left: $side-item-active-border-width solid transparent;
+    .fa {
+      width: $side-close-width - $side-item-active-border-width * 2;
+      text-align: center;
+    }
+    &.active {
+      background: #efefef;
+      border-color: #2e2e2e !important;
+    }
+    &:hover {
+      border-color: #eaeaea;
+    }
+    a {
+      height: $side-close-width;
+      line-height: $side-close-width;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+    .side-item {
+      a {
+        padding-left: $side-close-width;
+      }
+      &.active {
+        a {
+          background-color: #eaeaea;
+          color: black;
+          font-weight: bold;
+        }
+      }
+    }
+    .float-menu {
+      display: none;
+      &-header {
+        display: none;
+        font: {
+          size: 1rem;
+          weight: bold;
+        }
+      }
+      .side-item.active {
+        border-left: none;
+      }
+    }
+  }
+  &-menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+    bottom: $toggle-menu-btn-height;
+    box-sizing: border-box;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+&[data-menu-open=true] {
+  .side-item.active {
+    .float-menu {
+      position: relative;
+      display: block;
+    }
+  }
+  .float-menu-header {
+    display: none;
+  }
+}
+
+.can-hover:hover {
+  .float-menu {
+    background: #fafafa;
+    position: fixed;
+    left: $side-width;
+    min-width: 10rem;
+    top: 0;
+    display: block;
+    .side-item a {
+      padding-left: 1rem;
+    }
+  }
+}
+
+&[data-menu-open=false] .side-item:hover {
+  @extend .can-hover;
+  .float-menu {
+    left: $side-close-width;
+    &-header {
+      display: block;
+    }
+  }
+}
